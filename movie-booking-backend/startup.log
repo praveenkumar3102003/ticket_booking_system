@@ -1,0 +1,84 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< com.moviebooking:movie-booking-backend >---------------
+[INFO] Building movie-booking-backend 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:3.2.0:run (default-cli) > test-compile @ movie-booking-backend >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ movie-booking-backend ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ movie-booking-backend ---
+[INFO] Changes detected - recompiling the module! :input tree
+[INFO] Compiling 12 source files with javac [debug release 17] to target\classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ movie-booking-backend ---
+[INFO] skip non existing resourceDirectory c:\Users\Praveen Kumar\OneDrive\Documents\Desktop\ticket_booking_system\movie-booking-backend\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ movie-booking-backend ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] <<< spring-boot:3.2.0:run (default-cli) < test-compile @ movie-booking-backend <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:3.2.0:run (default-cli) @ movie-booking-backend ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2026-06-03T11:24:22.726+05:30  INFO 22728 --- [           main] c.moviebooking.MovieBookingApplication   : Starting MovieBookingApplication using Java 21.0.8 with PID 22728 (C:\Users\Praveen Kumar\OneDrive\Documents\Desktop\ticket_booking_system\movie-booking-backend\target\classes started by Praveen Kumar in c:\Users\Praveen Kumar\OneDrive\Documents\Desktop\ticket_booking_system\movie-booking-backend)
+2026-06-03T11:24:22.728+05:30  INFO 22728 --- [           main] c.moviebooking.MovieBookingApplication   : No active profile set, falling back to 1 default profile: "default"
+2026-06-03T11:24:23.167+05:30  INFO 22728 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-03T11:24:23.211+05:30  INFO 22728 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 38 ms. Found 2 JPA repository interfaces.
+2026-06-03T11:24:23.573+05:30  INFO 22728 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-06-03T11:24:23.588+05:30  INFO 22728 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-03T11:24:23.588+05:30  INFO 22728 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2026-06-03T11:24:23.633+05:30  INFO 22728 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-03T11:24:23.634+05:30  INFO 22728 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 875 ms
+2026-06-03T11:24:23.736+05:30  INFO 22728 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-03T11:24:23.777+05:30  INFO 22728 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2026-06-03T11:24:23.801+05:30  INFO 22728 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-06-03T11:24:23.988+05:30  INFO 22728 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-03T11:24:24.007+05:30  INFO 22728 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-03T11:24:24.140+05:30  INFO 22728 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@341c6ac2
+2026-06-03T11:24:24.141+05:30  INFO 22728 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-03T11:24:24.167+05:30  WARN 22728 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-03T11:24:24.767+05:30  INFO 22728 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-03T11:24:24.812+05:30  INFO 22728 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-03T11:24:25.037+05:30  WARN 22728 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-03T11:24:25.261+05:30  INFO 22728 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2026-06-03T11:24:25.265+05:30  INFO 22728 --- [           main] c.moviebooking.MovieBookingApplication   : Started MovieBookingApplication in 2.817 seconds (process running for 3.089)
+Hibernate: select count(*) from movies m1_0
+Hibernate: insert into movies (genre,language,name,price,release_date) values (?,?,?,?,?)
+Hibernate: insert into movies (genre,language,name,price,release_date) values (?,?,?,?,?)
+Hibernate: insert into movies (genre,language,name,price,release_date) values (?,?,?,?,?)
+Hibernate: insert into movies (genre,language,name,price,release_date) values (?,?,?,?,?)
+Hibernate: insert into movies (genre,language,name,price,release_date) values (?,?,?,?,?)
+Hibernate: insert into movies (genre,language,name,price,release_date) values (?,?,?,?,?)
+Hibernate: insert into movies (genre,language,name,price,release_date) values (?,?,?,?,?)
+Hibernate: insert into movies (genre,language,name,price,release_date) values (?,?,?,?,?)
+? Seeded 8 movies into the database.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  03:26 min
+[INFO] Finished at: 2026-06-03T11:27:46+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.springframework.boot:spring-boot-maven-plugin:3.2.0:run (default-cli) on project movie-booking-backend: Process terminated with exit code: 1 -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+
+c:\Users\Praveen Kumar\OneDrive\Documents\Desktop\ticket_booking_system\movie-booking-backend>
