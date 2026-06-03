@@ -1,0 +1,110 @@
+<div class="bookings-page">
+
+  <div class="page-hero">
+    <h1>🎟️ My Bookings</h1>
+    <p>Bookings for <strong>{{ userEmail }}</strong></p>
+  </div>
+
+  <!-- Loading spinner -->
+  <div class="spinner-wrap" *ngIf="loading">
+    <div class="spinner"></div>
+    <p>Fetching your bookings...</p>
+  </div>
+
+  <!-- Error -->
+  <div class="server-error" *ngIf="errorMessage && !loading">
+    <div class="error-icon">⚠️</div>
+    <h3>Connection Failed</h3>
+    <p>{{ errorMessage }}</p>
+    <div class="error-steps">
+      <p>Make sure:</p>
+      <ol>
+        <li>Spring Boot backend is running: <code>mvn spring-boot:run</code></li>
+        <li>PostgreSQL database is running</li>
+        <li>Backend is on port <strong>8080</strong></li>
+      </ol>
+    </div>
+    <button class="btn-retry" (click)="ngOnInit()">Retry</button>
+  </div>
+
+  <!-- Empty state -->
+  <div class="empty-state" *ngIf="!loading && !errorMessage && bookings.length === 0">
+    <div class="empty-icon">🎬</div>
+    <h3>No bookings found</h3>
+    <p>No bookings found for <strong>{{ userEmail }}</strong>.<br>Book a movie and it will appear here!</p>
+    <button class="btn-browse" (click)="bookMore()">Browse Movies</button>
+  </div>
+
+  <!-- Booking cards -->
+  <div class="bookings-grid" *ngIf="!loading && !errorMessage && bookings.length > 0">
+    <div class="booking-card"
+         *ngFor="let b of bookings"
+         [class.upcoming]="isUpcoming(b.bookingDate!)"
+         [class.past]="!isUpcoming(b.bookingDate!)">
+
+      <div class="card-header">
+        <div class="movie-icon">🎥</div>
+        <div class="header-info">
+          <h3>{{ b.movieName }}</h3>
+          <span class="badge"
+            [class.badge-upcoming]="isUpcoming(b.bookingDate!)"
+            [class.badge-past]="!isUpcoming(b.bookingDate!)">
+            {{ isUpcoming(b.bookingDate!) ? '🟢 Upcoming' : '🔵 Completed' }}
+          </span>
+        <!-- </div>
+        <div class="booking-id">#{{ b.id }}</div>
+      </div> -->
+
+      <div class="card-details">
+        <div class="detail-item">
+          <span class="detail-icon">👤</span>
+          <div>
+            <p class="detail-label">Name</p>
+            <p class="detail-value">{{ b.customerName }}</p>
+          </div>
+        </div>
+        <div class="detail-item">
+          <span class="detail-icon">✉️</span>
+          <div>
+            <p class="detail-label">Email</p>
+            <p class="detail-value">{{ b.customerEmail }}</p>
+          </div>
+        </div>
+        <div class="detail-item">
+          <span class="detail-icon">📱</span>
+          <div>
+            <p class="detail-label">Phone</p>
+            <p class="detail-value">{{ b.customerPhone }}</p>
+          </div>
+        </div>
+        <div class="detail-item">
+          <span class="detail-icon">🪑</span>
+          <div>
+            <p class="detail-label">Seats</p>
+            <p class="detail-value">{{ b.numberOfSeats }}</p>
+          </div>
+        </div>
+        <div class="detail-item">
+          <span class="detail-icon">📅</span>
+          <div>
+            <p class="detail-label">Booking Date</p>
+            <p class="detail-value">{{ b.bookingDate }}</p>
+          </div>
+        </div>
+        <div class="detail-item highlight">
+          <span class="detail-icon">💰</span>
+          <div>
+            <p class="detail-label">Total Paid</p>
+            <p class="detail-value price">₹{{ b.totalPrice }}</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="bottom-action" *ngIf="!loading && bookings.length > 0">
+    <button class="btn-browse" (click)="bookMore()">+ Book More Movies</button>
+  </div>
+
+</div>

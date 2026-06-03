@@ -1,0 +1,82 @@
+<div class="booking-page">
+  <div class="error-msg" *ngIf="errorMessage && !movie">{{ errorMessage }}</div>
+
+  <ng-container *ngIf="movie">
+    <div class="page-hero">
+      <h1>🎟️ Book Tickets</h1>
+      <p>{{ movie.name }}</p>
+    </div>
+
+    <div class="booking-wrapper">
+      <button class="btn-back" (click)="goBack()">← Back</button>
+
+      <div class="booking-card">
+        <!-- Movie Summary -->
+        <div class="movie-summary">
+          <div class="summary-icon">🎬</div>
+          <div class="summary-info">
+            <h3>{{ movie.name }}</h3>
+            <span>{{ movie.genre }} · {{ movie.language }}</span>
+          </div>
+          <div class="summary-price">₹{{ movie.price }}<span>/seat</span></div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Form -->
+        <form (ngSubmit)="confirmBooking()" #bookingForm="ngForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Full Name</label>
+              <input type="text" [(ngModel)]="booking.customerName" name="customerName"
+                required placeholder="Your full name" />
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" [(ngModel)]="booking.customerEmail" name="customerEmail"
+                required placeholder="Your email" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" [(ngModel)]="booking.customerPhone" name="customerPhone"
+                required pattern="[0-9]{10}" placeholder="10-digit phone number" />
+            </div>
+            <div class="form-group">
+              <label>Booking Date</label>
+              <input type="date" [(ngModel)]="booking.bookingDate" name="bookingDate"
+                required [min]="todayDate" />
+            </div>
+          </div>
+
+          <div class="form-group seats-group">
+            <label>Number of Seats</label>
+            <div class="seats-control">
+              <button type="button" class="seat-btn" (click)="booking.numberOfSeats = booking.numberOfSeats > 1 ? booking.numberOfSeats - 1 : 1">−</button>
+              <span class="seat-count">{{ booking.numberOfSeats }}</span>
+              <button type="button" class="seat-btn" (click)="booking.numberOfSeats = booking.numberOfSeats < 10 ? booking.numberOfSeats + 1 : 10">+</button>
+            </div>
+          </div>
+
+          <div class="error-msg" *ngIf="errorMessage">{{ errorMessage }}</div>
+
+          <div class="total-block">
+            <span>{{ booking.numberOfSeats }} seat(s) × ₹{{ movie.price }}</span>
+            <strong>Total: ₹{{ totalPrice }}</strong>
+          </div>
+
+          <button type="submit" class="btn-confirm" [disabled]="bookingForm.invalid || submitting">
+            {{ submitting ? 'Processing...' : '✅ Confirm Booking' }}
+          </button>
+        </form>
+      </div>
+    </div>
+  </ng-container>
+
+  <div class="spinner-wrap" *ngIf="!movie && !errorMessage">
+    <div class="spinner"></div>
+    <p>Loading...</p>
+  </div>
+</div>

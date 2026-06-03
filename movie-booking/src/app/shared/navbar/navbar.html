@@ -1,0 +1,15 @@
+<nav class="navbar">
+  <a routerLink="/movies" class="brand">🎬 MovieBook</a>
+  <div class="nav-links">
+    <a routerLink="/movies" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Movies</a>
+    <ng-container *ngIf="isLoggedIn(); else authLinks">
+      <a routerLink="/my-bookings" routerLinkActive="active-link">My Bookings</a>
+      <span class="user-name">👤 {{ userName() }}</span>
+      <button class="btn-logout" (click)="logout()">Logout</button>
+    </ng-container>
+    <ng-template #authLinks>
+      <a routerLink="/login" class="btn-nav-login">Login</a>
+      <a routerLink="/signup" class="btn-nav-signup">Sign Up</a>
+    </ng-template>
+  </div>
+</nav>

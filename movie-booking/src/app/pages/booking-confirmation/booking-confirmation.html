@@ -1,0 +1,17 @@
+<div class="confirmation-container" *ngIf="booking">
+  <div class="confirmation-card">
+    <div class="icon">✅</div>
+    <h2>Booking Confirmed!</h2>
+    <p class="booking-id">Booking ID: <strong>#{{ booking.id }}</strong></p>
+    <div class="details">
+      <p><strong>Movie:</strong> {{ booking.movieName }}</p>
+      <p><strong>Name:</strong> {{ booking.customerName }}</p>
+      <p><strong>Email:</strong> {{ booking.customerEmail }}</p>
+      <p><strong>Phone:</strong> {{ booking.customerPhone }}</p>
+      <p><strong>Seats:</strong> {{ booking.numberOfSeats }}</p>
+      <p><strong>Total Paid:</strong> ₹{{ booking.totalPrice }}</p>
+      <p><strong>Booking Date:</strong> {{ booking.bookingDate }}</p>
+    </div>
+    <button class="btn-home" (click)="goHome()">Browse More Movies</button>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+.confirmation-container { padding: 40px 24px; display: flex; justify-content: center; }
+.confirmation-card {
+  background: white;
+  border-radius: 12px;
+  padding: 36px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+}
+.icon { font-size: 3rem; margin-bottom: 12px; }
+h2 { color: #1a1a2e; font-size: 1.8rem; margin-bottom: 8px; }
+.booking-id { color: #888; margin-bottom: 20px; }
+.details { text-align: left; background: #f9f9f9; padding: 16px; border-radius: 8px; margin-bottom: 24px; }
+.details p { margin: 8px 0; font-size: 0.95rem; color: #444; }
+.btn-home {
+  background: #e94560;
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.btn-home:hover { background: #c73652; }

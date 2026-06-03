@@ -1,0 +1,126 @@
+.booking-page {
+  min-height: calc(100vh - 56px);
+  background: linear-gradient(160deg, #0f0c29, #302b63, #24243e);
+  padding: 0 0 60px;
+}
+
+.page-hero { text-align: center; padding: 50px 20px 30px; color: white; }
+.page-hero h1 { font-size: 2.4rem; font-weight: 800; margin-bottom: 6px; }
+.page-hero p { font-size: 1.1rem; color: rgba(255,255,255,0.55); }
+
+.booking-wrapper { max-width: 620px; margin: 0 auto; padding: 0 20px; }
+
+.btn-back {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.8);
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-bottom: 18px;
+  display: inline-block;
+  transition: background 0.2s;
+}
+.btn-back:hover { background: rgba(255,255,255,0.14); }
+
+.booking-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px;
+  padding: 28px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.3);
+}
+
+/* Movie summary */
+.movie-summary {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+.summary-icon { font-size: 2rem; }
+.summary-info { flex: 1; }
+.summary-info h3 { color: white; font-size: 1.1rem; font-weight: 700; margin-bottom: 3px; }
+.summary-info span { color: rgba(255,255,255,0.5); font-size: 0.82rem; }
+.summary-price { font-size: 1.4rem; font-weight: 800; color: #e94560; }
+.summary-price span { font-size: 0.75rem; color: rgba(255,255,255,0.4); font-weight: 400; }
+
+.divider { border: none; border-top: 1px solid rgba(255,255,255,0.08); margin-bottom: 22px; }
+
+/* Form */
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+.form-group { display: flex; flex-direction: column; margin-bottom: 0; }
+.form-group label { font-size: 0.78rem; font-weight: 600; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 7px; }
+.form-group input {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 10px;
+  padding: 11px 14px;
+  color: white;
+  font-size: 0.92rem;
+  outline: none;
+  transition: border-color 0.2s;
+  color-scheme: dark;
+}
+.form-group input::placeholder { color: rgba(255,255,255,0.3); }
+.form-group input:focus { border-color: #e94560; background: rgba(255,255,255,0.1); }
+
+/* Seats stepper */
+.seats-group { margin-bottom: 20px; }
+.seats-control { display: flex; align-items: center; gap: 16px; margin-top: 4px; }
+.seat-btn {
+  width: 36px; height: 36px;
+  background: rgba(233,69,96,0.2);
+  border: 1px solid rgba(233,69,96,0.4);
+  color: #e94560;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background 0.2s;
+  display: flex; align-items: center; justify-content: center;
+}
+.seat-btn:hover { background: rgba(233,69,96,0.35); }
+.seat-count { font-size: 1.4rem; font-weight: 800; color: white; min-width: 28px; text-align: center; }
+
+/* Total */
+.total-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(233,69,96,0.1);
+  border: 1px solid rgba(233,69,96,0.25);
+  border-radius: 12px;
+  padding: 14px 18px;
+  margin: 20px 0;
+  color: rgba(255,255,255,0.6);
+  font-size: 0.9rem;
+}
+.total-block strong { font-size: 1.3rem; color: #e94560; font-weight: 800; }
+
+.btn-confirm {
+  width: 100%;
+  background: linear-gradient(135deg, #e94560, #c73652);
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 18px rgba(233,69,96,0.4);
+  transition: transform 0.15s, box-shadow 0.2s;
+}
+.btn-confirm:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(233,69,96,0.5); }
+.btn-confirm:disabled { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.3); box-shadow: none; cursor: not-allowed; }
+
+.spinner-wrap { display: flex; flex-direction: column; align-items: center; padding: 80px 20px; color: rgba(255,255,255,0.5); gap: 16px; }
+.spinner { width: 40px; height: 40px; border: 3px solid rgba(255,255,255,0.1); border-top-color: #e94560; border-radius: 50%; animation: spin 0.8s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+@media (max-width: 560px) {
+  .form-row { grid-template-columns: 1fr; }
+  .booking-card { padding: 20px; }
+}

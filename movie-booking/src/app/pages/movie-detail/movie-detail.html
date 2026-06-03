@@ -1,0 +1,58 @@
+<div class="detail-page">
+  <div class="error-msg" *ngIf="errorMessage">{{ errorMessage }}</div>
+
+  <div class="detail-wrapper" *ngIf="movie && !errorMessage">
+    <button class="btn-back" (click)="goBack()">← Back to Movies</button>
+
+    <div class="detail-card">
+      <div class="detail-left">
+        <div class="poster-placeholder">
+          <span class="poster-icon">🎬</span>
+        </div>
+      </div>
+
+      <div class="detail-right">
+        <div class="badge">{{ movie.genre }}</div>
+        <h1>{{ movie.name }}</h1>
+
+        <div class="meta-row">
+          <div class="meta-item">
+            <span class="meta-icon">🌐</span>
+            <div>
+              <p class="meta-label">Language</p>
+              <p class="meta-value">{{ movie.language }}</p>
+            </div>
+          </div>
+          <div class="meta-item">
+            <span class="meta-icon">🎭</span>
+            <div>
+              <p class="meta-label">Genre</p>
+              <p class="meta-value">{{ movie.genre }}</p>
+            </div>
+          </div>
+          <div class="meta-item">
+            <span class="meta-icon">📅</span>
+            <div>
+              <p class="meta-label">Release Date</p>
+              <p class="meta-value">{{ movie.releaseDate }}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="price-block">
+          <p class="price-label">Price per Seat</p>
+          <p class="price-value">₹{{ movie.price }}</p>
+        </div>
+
+        <button class="btn-book" (click)="bookMovie()">
+          🎟️ Book Tickets Now
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="spinner-wrap" *ngIf="!movie && !errorMessage">
+    <div class="spinner"></div>
+    <p>Loading movie details...</p>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="movies-page">
+  <div class="page-hero">
+    <h1>🎬 Now Showing</h1>
+    <p>Choose a movie and book your seats instantly</p>
+  </div>
+
+  <div class="error-msg" *ngIf="errorMessage">{{ errorMessage }}</div>
+
+  <div class="movies-grid" *ngIf="!errorMessage && movies.length > 0">
+    <div class="movie-card" *ngFor="let movie of movies; let i = index">
+      <div class="card-number">{{ i + 1 }}</div>
+      <div class="card-body">
+        <div class="movie-icon">🎥</div>
+        <h3>{{ movie.name }}</h3>
+      </div>
+      <button class="btn-view" (click)="viewMovie(movie)">
+        View Details <span class="arrow">→</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="spinner-wrap" *ngIf="!errorMessage && loading">
+    <div class="spinner"></div>
+    <p>Loading movies...</p>
+  </div>
+
+  <div class="empty-message" *ngIf="!errorMessage && !loading && movies.length === 0">
+    <p>{{ emptyMessage }}</p>
+  </div>
+</div>

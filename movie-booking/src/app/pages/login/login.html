@@ -1,0 +1,43 @@
+<div class="auth-wrapper">
+  <div class="auth-left">
+    <div class="brand-block">
+      <div class="brand-icon">🎬</div>
+      <h1>MovieBook</h1>
+      <p>Your ultimate movie ticket booking experience</p>
+    </div>
+  </div>
+
+  <div class="auth-right">
+    <div class="auth-card">
+      <h2>Welcome Back</h2>
+      <p class="subtitle">Sign in to continue booking</p>
+
+      <div class="success-msg" *ngIf="successMessage">✅ {{ successMessage }}</div>
+      <div class="error-msg" *ngIf="errorMessage">❌ {{ errorMessage }}</div>
+
+      <form (ngSubmit)="login()" #loginForm="ngForm">
+        <div class="form-group">
+          <label>Email Address</label>
+          <div class="input-wrapper">
+            <span class="icon">✉️</span>
+            <input type="email" [(ngModel)]="email" name="email" required placeholder="you@example.com" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Password</label>
+          <div class="input-wrapper">
+            <span class="icon">🔒</span>
+            <input type="password" [(ngModel)]="password" name="password" required placeholder="Enter your password" />
+          </div>
+        </div>
+
+        <button type="submit" class="btn-auth" [disabled]="loginForm.invalid || loading">
+          {{ loading ? 'Signing in...' : 'Sign In' }}
+        </button>
+      </form>
+
+      <p class="switch-link">Don't have an account? <a routerLink="/signup">Sign Up</a></p>
+    </div>
+  </div>
+</div>
